@@ -27,6 +27,11 @@ public class homeWork_3 {
             }
 
         }
+        System.out.println("Хотите сыграть еще?");
+        int i = scanner.nextInt();
+        if (i == 1) {
+            gameNumber();
+        }
     }
 
     public static void main(String[] args) {
@@ -36,7 +41,7 @@ public class homeWork_3 {
         int range = 9;
         int x = (int) (Math.random() * range);
         System.out.println("Угадайте число от 0 до " + range + "." + " У вас есть 3 попытки!");
-        for (int N = 0; N < 3; N++) {
+        for (int N = 0; N < 3;) {
             int inputNumber = scanner.nextInt();
             if (inputNumber == x) {
                 System.out.println("Вы угадали! Хотите сыграть еще?");
@@ -46,9 +51,10 @@ public class homeWork_3 {
                 } else break;
             } else if (inputNumber > x) {
                 System.out.println("Загаданное число меньше");
-
+                N++;
             } else {
                 System.out.println("Загаданное число больше");
+                N++;
             }
 
         }
